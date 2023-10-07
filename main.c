@@ -6,20 +6,21 @@
 int main(int argc, char *argv[]) 
 
 {
-	int year;
+	unsigned int x;
+	int b;
 	
-	printf("input a year:");
-	scanf("%d", &year);
+	printf("input a number:");
+	scanf("%ui", &x);
 	
-	if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+	for (b=0; x!=0; x >>=1)
 	{
-		printf("This is leap year \n!");
+		if (x & 1)
+		{
+			b++;
+		}
 	}
-
-	else
-	{
-		printf("This is not leap year \n!");
-	}
+	
+	printf("The resultis : %i\n", b);
 	
 	system("PAUSE");
 	return 0;
