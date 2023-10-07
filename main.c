@@ -4,24 +4,19 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) 
-
 {
-	unsigned int x;
-	int b;
+	int input;
+	int sec, min, hour;
 	
-	printf("input a number:");
-	scanf("%ui", &x);
+	printf("input second: ");
+	scanf("%d", &input);
 	
-	for (b=0; x!=0; x >>=1)
-	{
-		if (x & 1)
-		{
-			b++;
-		}
-	}
+	sec = input%60;
+	min = (input%3600)/60 ;
+	hour = input/3600;
 	
-	printf("The resultis : %i\n", b);
+	printf("The time is %d : %d : %d\n", hour, min, sec);
 	
-	system("PAUSE");
 	return 0;
 }
+
